@@ -1,0 +1,28 @@
+cabal-version:      3.4
+name:               hnix-store-dump
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            MIT
+license-file:       LICENSE
+author:             Sander
+maintainer:         hey@sandydoo.me
+-- copyright:
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+executable hnix-store-dump
+    import:           warnings
+    main-is:          Main.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base
+                    , directory
+                    , filepath
+                    , hnix-store-core
+    hs-source-dirs:   exe
+    default-language: GHC2021
