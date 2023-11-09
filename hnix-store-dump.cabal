@@ -24,5 +24,7 @@ executable hnix-store-dump
                     , directory
                     , filepath
                     , hnix-store-core
+                    , optparse-applicative
     hs-source-dirs:   exe
     default-language: GHC2021
+    ghc-options: -threaded -Wall
