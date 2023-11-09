@@ -64,11 +64,12 @@ dumpNar DumpNarOptions {..} = do
 
 restoreNar :: RestoreNarOptions -> IO ()
 restoreNar RestoreNarOptions {..} = do
-  res <- withBinaryFile restoreNarPath ReadMode $ \h ->
-    runParser
-      narEffectsIO
-      parseNar
-      h
-      restoreOutPath
+  withBinaryFile restoreNarPath ReadMode $ \h -> do
+    res <-
+      runParser
+        narEffectsIO
+        parseNar
+        h
+        restoreOutPath
 
-  print res
+    print res
